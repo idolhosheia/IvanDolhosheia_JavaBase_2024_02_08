@@ -6,10 +6,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class LotteryGame {
     public static void main(String[] args) {
         int size = 7;
-        int[] arrayOne = generate(size);
-        System.out.println(Arrays.toString(arrayOne));
-        int[] arrayTwo = generate(size);
-        System.out.println(Arrays.toString(arrayTwo));
+        int[] arrayLotteryOrganizingCompanyGuess = generate(size);
+        System.out.println("Lottery organizing company guess: ");
+        System.out.println(Arrays.toString(arrayLotteryOrganizingCompanyGuess));
+        int[] arrayPlayerGuess = generate(size);
+        System.out.println("Lottery player guess: ");
+        System.out.println(Arrays.toString(arrayPlayerGuess));
     }
 
     private static int[] generate(int sizeOne) {
@@ -22,11 +24,11 @@ public class LotteryGame {
 }
 
 
-//        Зробити два масиви з 7 цифр, заповнених випадковими цифрами (від 0 до 9).
+//        Done Зробити два масиви з 7 цифр, заповнених випадковими цифрами (від 0 до 9).
 //
-//        Перший масив - це числа, які загадані фірмою-організатором лотереї.
+//        Done Перший масив - це числа, які загадані фірмою-організатором лотереї.
 //
-//        Другий масив - це числа, які вгадав гравець.
+//        Done Другий масив - це числа, які вгадав гравець.
 //
 //        Після того, як обидва масиви заповнені цифрами, потрібно відсортувати їх за зростанням будь-яким способом.
 //

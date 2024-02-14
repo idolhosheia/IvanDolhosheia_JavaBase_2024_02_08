@@ -1,12 +1,25 @@
 package com.homework.homework10;
 
+import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class LotteryGame {
+    public static void main(String[] args) {
+        int size = 7;
+        int[] arrayOne = generate(size);
+        System.out.println(Arrays.toString(arrayOne));
+        int[] arrayTwo = generate(size);
+        System.out.println(Arrays.toString(arrayTwo));
+    }
+
+    private static int[] generate(int sizeOne) {
+        int[] array = new int[sizeOne];
+        for(int i = 0; i < array.length; i++){
+            array[i] = ThreadLocalRandom.current().nextInt(0,10);
+        }
+        return array;
+    }
 }
-
-
-
-
-
 
 
 //        Зробити два масиви з 7 цифр, заповнених випадковими цифрами (від 0 до 9).

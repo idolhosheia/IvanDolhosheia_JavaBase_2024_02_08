@@ -6,20 +6,37 @@ import java.util.concurrent.ThreadLocalRandom;
 public class LotteryGame {
     public static void main(String[] args) {
         int size = 7;
-        int[] arrayLotteryOrganizingCompanyGuess = generate(size);
+        int[] arrLotteryOrganizingCompanyGuess = generate(size);
         System.out.println("Lottery organizing company guess: ");
-        System.out.println(Arrays.toString(arrayLotteryOrganizingCompanyGuess));
-        int[] arrayPlayerGuess = generate(size);
+        System.out.println(Arrays.toString(bubbleSort(arrLotteryOrganizingCompanyGuess)));
+        int[] arrPlayerGuess = generate(size);
         System.out.println("Lottery player guess: ");
-        System.out.println(Arrays.toString(arrayPlayerGuess));
+        System.out.println(Arrays.toString(bubbleSort(arrPlayerGuess)));
     }
 
     private static int[] generate(int sizeOne) {
         int[] array = new int[sizeOne];
-        for(int i = 0; i < array.length; i++){
-            array[i] = ThreadLocalRandom.current().nextInt(0,10);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ThreadLocalRandom.current().nextInt(0, 10);
         }
         return array;
+    }
+
+    public static int[] bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j);
+                }
+            }
+        }
+        return array;
+    }
+
+    private static void swap(int[] array, int i) {
+        int tmp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = tmp;
     }
 }
 
@@ -30,7 +47,7 @@ public class LotteryGame {
 //
 //        Done Другий масив - це числа, які вгадав гравець.
 //
-//        Після того, як обидва масиви заповнені цифрами, потрібно відсортувати їх за зростанням будь-яким способом.
+//        Done Після того, як обидва масиви заповнені цифрами, потрібно відсортувати їх за зростанням будь-яким способом.
 //
 //        У відсортованих масивах визначити кількість збігів, тобто чисел у двох масивах з однаковим індексом; Наприклад:
 //

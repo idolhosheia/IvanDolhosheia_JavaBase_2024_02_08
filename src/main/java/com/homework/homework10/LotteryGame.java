@@ -1,6 +1,7 @@
 package com.homework.homework10;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class LotteryGame {
@@ -12,10 +13,24 @@ public class LotteryGame {
         int[] arrPlayerGuess = generate(size);
         System.out.println("Lottery player guess: ");
         System.out.println(Arrays.toString(bubbleSort(arrPlayerGuess)));
+
+        int count = 0;
+        int arrayAmount = 0;
+        for (int i = 0; i < arrLotteryOrganizingCompanyGuess.length; i++) {
+            for (int j = arrayAmount; j < arrPlayerGuess.length; j++) {
+                if (Objects.equals(arrLotteryOrganizingCompanyGuess[i], arrPlayerGuess[i])) {
+                    count++;
+                    arrayAmount = j;
+                    break;
+                }
+            }
+        }
+        System.out.println(count);
+        System.out.println("Amount of matches: " + count);
     }
 
-    private static int[] generate(int sizeOne) {
-        int[] array = new int[sizeOne];
+    private static int[] generate(int size) {
+        int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(0, 10);
         }
@@ -39,25 +54,4 @@ public class LotteryGame {
         array[i + 1] = tmp;
     }
 }
-
-
-//        Done Зробити два масиви з 7 цифр, заповнених випадковими цифрами (від 0 до 9).
-//
-//        Done Перший масив - це числа, які загадані фірмою-організатором лотереї.
-//
-//        Done Другий масив - це числа, які вгадав гравець.
-//
-//        Done Після того, як обидва масиви заповнені цифрами, потрібно відсортувати їх за зростанням будь-яким способом.
-//
-//        У відсортованих масивах визначити кількість збігів, тобто чисел у двох масивах з однаковим індексом; Наприклад:
-//
-//        first[3] повинен дорівнювати second[3], як показано нижче.
-//
-//        Приклад виведення в консоль (збіглися 1й, 4й та 6й елементи):
-//
-//        [0, 1, 4, 5, 5, 8, 9]
-//
-//        [1, 1, 2, 3, 5, 6, 9]
-//
-//        Кількість збігів: 3
 

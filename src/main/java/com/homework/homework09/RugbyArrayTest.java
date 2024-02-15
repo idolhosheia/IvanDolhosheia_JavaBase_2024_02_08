@@ -2,7 +2,7 @@ package com.homework.homework09;
 
 import java.util.Scanner;
 
-public class RugbyArray {
+public class RugbyArrayTest {
     public static void main(String[] args) {
         Scanner scanTeamOneName = new Scanner(System.in);
         System.out.println("Enter the name of the first Rugby team: ");

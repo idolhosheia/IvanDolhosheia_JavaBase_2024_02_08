@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class TransposeMatrix {
     public static void main(String[] args) {
-        Scanner scanArray = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the size of rows (M): ");
-        int scanRows = scanArray.nextInt();
-        //System.out.println("The size of M axis is: " + scanRows);
+        int rows = scanner.nextInt();
+        //System.out.println("The size of M axis is: " + rows);
 
         System.out.println("Enter the size of columns (N): ");
-        int scanColumns = scanArray.nextInt();
-        //System.out.println("The size of N axis is: " + scanColumns);
+        int columns = scanner.nextInt();
+        //System.out.println("The size of N axis is: " + columns);
 
-        int[][] arrayOriginal = new int[scanRows][scanColumns];
-        int[][] arrayTranspose = new int[scanColumns][scanRows];
+        int[][] arrayOriginal = new int[rows][columns];
+        int[][] arrayTranspose = new int[columns][rows];
 
         System.out.println("Original array (M x N): ");
         displayArray(arrayOriginal);
@@ -23,7 +23,7 @@ public class TransposeMatrix {
         System.out.println("Transpose array (N x M): ");
         displayArray(arrayTranspose);
 
-        scanArray.close();
+        scanner.close();
     }
 
     private static void displayArray(int[][] array) {

@@ -25,7 +25,6 @@ public class LotteryGame {
                 }
             }
         }
-        System.out.println(count);
         System.out.println("Amount of matches: " + count);
     }
 
@@ -54,4 +53,3 @@ public class LotteryGame {
         array[i + 1] = tmp;
     }
 }
-

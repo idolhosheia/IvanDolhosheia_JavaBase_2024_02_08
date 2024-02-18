@@ -30,7 +30,7 @@ public class Person {
         person3.personInfo();
     }
 
-    public void personInfo(){
+    public void personInfo() {
         System.out.println("You may contact " + name + " " + surname + " from city of "
                 + city + " using the phone number " + phoneNum);
     }

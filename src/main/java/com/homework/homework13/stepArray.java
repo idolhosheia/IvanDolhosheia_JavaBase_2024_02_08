@@ -28,37 +28,13 @@ public class stepArray {
             }
         }
 
-//        System.out.println("Matrix N*M: ");
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                System.out.print(matrix[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//        scanner.close();
-
-
         System.out.println("Matrix N*M:");
         printMatrix(matrix);
 
         System.out.println("\n Sorted Matrix N*M:");
         printMatrix(sortRows(matrix));
-
-//        System.out.println("The total sum of all elements:");
-//        printMatrix(sumElements(matrix));
-//
-//        scanner.close();
     }
 
-//    private static int[][] sumElements(int[][] matrix) {
-//        int sumElements = 0;
-//        for (int i = 0; i < matrix.length; i++) {
-//
-//            sumElements++;
-//
-//        }
-//        return matrix;
-//    }
 
     public static int[][] sortRows(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {

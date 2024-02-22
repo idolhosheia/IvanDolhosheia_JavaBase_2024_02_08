@@ -1,7 +1,7 @@
 package com.homework.homework12;
 
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TransposeMatrix {
     public static void main(String[] args) {
@@ -9,32 +9,44 @@ public class TransposeMatrix {
 
         System.out.println("Enter the number of rows (M): ");
         int rows = scanner.nextInt();
-
         System.out.println("Enter the number of columns (N): ");
         int columns = scanner.nextInt();
 
-        int matrix[][] = new int[rows][columns];
+        System.out.println("Original matrix: ");
+        int[][] matrix = generateMatrix(rows, columns);
+        printMatrix(matrix);
 
-        System.out.println("Enter the numbers for the matrix:");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                matrix[i][j] = scanner.nextInt();
-                System.out.print("");
+        System.out.println("Transpose matrix: ");
+        int[][] transposedMatrix = generateTransposedMatrix(matrix);
+        printMatrix(transposedMatrix);
+
+    }
+
+    private static int[][] generateMatrix(int rows, int columns) {
+        int[][] matrix = new int[rows][columns];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = ThreadLocalRandom.current().nextInt(rows * columns);
             }
         }
+        return matrix;
+    }
 
-        System.out.println("The original matrix: ");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(matrix[i][j] + " ");
+    private static int[][] generateTransposedMatrix(int[][] matrix) {
+        int[][] transposedMatrix = new int[matrix[0].length][matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                transposedMatrix[j][i] = matrix[i][j];
             }
             System.out.println();
         }
+        return transposedMatrix;
+    }
 
-        System.out.println("The transpose matrix: ");
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                System.out.print(matrix[j][i] + " ");
+    private static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
             }
             System.out.println();
         }

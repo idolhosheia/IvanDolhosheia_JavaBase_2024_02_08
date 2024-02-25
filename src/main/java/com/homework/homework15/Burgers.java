@@ -36,6 +36,3 @@ public class Burgers {
                 + ", " + cheese + ", " + greens + ", " + mayonnaise);
     }
 }
-
-//System.out.println("The standard burger has ingredients: " + bun + ", " + meat
-//                + ", " + cheese + ", " + greens + ", " + mayonnaise);

@@ -1,4 +1,5 @@
 package com.homework.homework17;
 
-public class iOS {
+public interface iOS {
+    void iOs();
 }

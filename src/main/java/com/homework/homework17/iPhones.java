@@ -14,17 +14,27 @@ public class iPhones implements iOS, Smartphones {
 
     @Override
     public void call(int phoneNumber) {
-        System.out.println("iPhones: make a call: " + phoneNumber);
+        System.out.println("\niPhone makes a call: " + phoneNumber);
     }
 
     @Override
     public void sms(int phoneNumber, String smsMessage) {
-        System.out.println("iPhone: send an sms from number " + phoneNumber + " with text: " + smsMessage);
+        System.out.println("iPhone sends an sms from number " + phoneNumber + " with text: " + smsMessage);
     }
 
     @Override
     public void internet() {
-        System.out.println("iPhones: connect to the internet");
+        System.out.println("iPhone connects to the internet");
+    }
+
+    @Override
+    public void appStore() {
+        System.out.println("iPhone uses AppStore");
+    }
+
+    @Override
+    public void faceTime(String contact) {
+        System.out.println("iPhone uses facetime to contact: " + contact);
     }
 
     @Override

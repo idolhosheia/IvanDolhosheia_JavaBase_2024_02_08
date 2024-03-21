@@ -1,9 +1,12 @@
 package com.homework.homework22;
 
 public class CelsiusToKelvin extends TemperatureConverter {
-    public static void main(String[] args) {
-        double temperatureCelsius = 0;
-        double temperatureKelvin = (temperatureCelsius + 273.15);
+    public static String main(String[] args) {
+        return temperatureKelvin();
+
+        //System.out.println(temperatureKelvin());
+        //double temperatureCelsius = 0;
+        //double temperatureKelvin = (temperatureCelsius + 273.15);
         //System.out.println("The temperature " + temperatureCelsius + " °C equals to " + temperatureKelvin + " °K.");
     }
 }
